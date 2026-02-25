@@ -18,6 +18,9 @@ OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
 
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
+@app.route('/ping')
+def ping():
+    return jsonify({'status': 'ok'})
 
 @app.route('/processar', methods=['POST'])
 def processar():
@@ -80,4 +83,5 @@ def download(nome_arquivo):
 if __name__ == '__main__':
 
     app.run(debug=False)
+
 
