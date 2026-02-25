@@ -9,9 +9,7 @@ from importar_nfe import extrair_texto_pdf, parsear_cabecalho, parsear_itens, ge
 app = Flask(__name__)
 
 # Libera chamadas vindas do GitHub Pages
-CORS(app, origins=[
-    "https://SEU_USUARIO.github.io",  # ← troque pelo seu usuário
-])
+CORS(app, origins=["https://gabrieltres03.github.io"])
 
 UPLOAD_FOLDER = Path('/tmp/uploads')
 OUTPUT_FOLDER = Path('/tmp/outputs')
@@ -80,4 +78,5 @@ def download(nome_arquivo):
 
 
 if __name__ == '__main__':
+
     app.run(debug=False)
